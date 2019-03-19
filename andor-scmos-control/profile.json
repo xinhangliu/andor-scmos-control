@@ -1,0 +1,82 @@
+[
+    {
+        "identifier": "ExposureTime",
+        "type": "float",
+        "description": "The requested exposure time in seconds. Note: In some modes the exposure time can also be modified while the acquisition is running."
+    },
+    {
+        "identifier": "AOIWidth",
+        "type": "integer",
+        "description": ""
+    },
+    {
+        "identifier": "AOIHeight",
+        "type": "integer",
+        "description": ""
+    },
+    {
+        "identifier": "AOITop",
+        "type": "integer",
+        "description": ""
+    },
+    {
+        "identifier": "AOILeft",
+        "type": "integer",
+        "description": ""
+    },
+    {
+        "identifier": "AOIStride",
+        "type": "integer",
+        "description": ""
+    },
+    {
+        "identifier": "AOIBinning",
+        "type": "enum",
+        "description": "Sets up pixel binning on the camera."
+    },
+    {
+        "identifier": "BitDepth",
+        "type": "enum",
+        "description": ""
+    },
+    {
+        "identifier": "PixelEncoding",
+        "type": "enum",
+        "description": ""
+    },
+    {
+        "identifier": "FanSpeed",
+        "type": "enum",
+        "description": ""
+    },
+    {
+        "identifier": "PixelReadoutRate",
+        "type": "enum",
+        "description": ""
+    },
+    {
+        "identifier": "SimplePreAmpGainControl",
+        "type": "enum",
+        "description": ""
+    },
+    {
+        "identifier": "TriggerMode",
+        "type": "enum",
+        "description": ""
+    },
+    {
+        "identifier": "BytesPerPixel",
+        "type": "float",
+        "description": "Returns the calculated bytes per pixel. This is read only."
+    },
+    {
+        "identifier": "CameraName",
+        "type": "string",
+        "description": "Returns the name of the camera."
+    },
+    {
+        "identifier": "SerialNumber",
+        "type": "string",
+        "description": "Returns the camera serial number."
+    }
+]

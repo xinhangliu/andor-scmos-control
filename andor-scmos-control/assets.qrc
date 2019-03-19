@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/icon.ico</file>
+        <file>profile.json</file>
+    </qresource>
+</RCC>
