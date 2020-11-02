@@ -54,7 +54,8 @@ void Server::ack(int retcode) {
 
 Request Server::parseRequest(const char *requestData) {
     Request req;
-    QStringList itemList = QString().fromStdString(requestData).split(';', QString::SkipEmptyParts);
+    //QStringList itemList = QString().fromStdString(requestData).split(';', QString::SkipEmptyParts);
+    QStringList itemList = QString().fromStdString(requestData).split(';');
     for (QString &item: itemList) {
         QStringList kv = item.split(':');
         if (kv[0] == 'i') {
@@ -64,7 +65,8 @@ Request Server::parseRequest(const char *requestData) {
         } else if (kv[0] == 'p') {
             QStringList pList;
             if (kv[1].contains(',')) {
-                pList = kv[1].split(',', QString::SkipEmptyParts);
+                //pList = kv[1].split(',', QString::SkipEmptyParts);
+                pList = kv[1].split(',');
             } else {
                 pList.append(kv[1]);
             }

@@ -12,15 +12,10 @@ TARGET = andor-scmos-control
 TEMPLATE = app
 
 INCLUDEPATH += "C:\Program Files\Andor SDK3"
-INCLUDEPATH += D:\home\xinhangliu\opencv-build\install\include
+INCLUDEPATH += D:\opencv\build\include
 LIBS += -L"C:\Program Files\Andor SDK3" -latcorem -latutilitym
-LIBS += -L"D:\home\xinhangliu\opencv-build\install\x64\mingw\lib" \
-    -lopencv_core401 \
-    -lopencv_highgui401 \
-    -lopencv_imgcodecs401 \
-    -lopencv_imgproc401 \
-    -lopencv_features2d401 \
-    -lopencv_calib3d401
+LIBS += -L"D:\opencv\build\x64\vc15\lib" \
+    -lopencv_world440
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -66,3 +61,12 @@ RESOURCES += \
     assets.qrc
 
 win32:RC_ICONS += "./assets/icon.ico"
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/./ -lopencv_world440
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/./ -lopencv_world440d
+
+INCLUDEPATH += $$PWD/.
+DEPENDPATH += $$PWD/.
+
+win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/./opencv_world440.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/./opencv_world440d.lib
